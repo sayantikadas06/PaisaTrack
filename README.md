@@ -34,7 +34,7 @@ PaisaTrack is a full-stack MERN Expense Tracker application that helps users rec
 
 ```text
 expense tracker_application/
-├── frontend/
+├── vite-project/
 │   ├── src/
 │   ├── package.json
 │   └── ...
@@ -87,7 +87,7 @@ The API runs at `http://localhost:5000`, provided the port is available and the 
 Open a second terminal in the project root and run:
 
 ```bash
-cd frontend
+cd vite-project
 npm install
 npm run dev
 ```
