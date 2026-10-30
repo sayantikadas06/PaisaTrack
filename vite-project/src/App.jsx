@@ -13,7 +13,9 @@ import {
 } from "lucide-react";
 import "./App.css";
 
-const API_URL = "http://localhost:5000/api/transactions";
+const API_URL =
+  import.meta.env.VITE_API_URL ||
+  "http://localhost:5000/api/transactions";
 
 function App() {
   const [transactions, setTransactions] = useState([]);
@@ -54,7 +56,7 @@ const [filterDate, setFilterDate] = useState("");
       setError("");
     } catch (err) {
       setError(
-        "Could not load data. Make sure your backend is running on port 5000."
+        "Could not load data. Please check your backend connection."
       );
     }
   };
