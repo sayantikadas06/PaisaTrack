@@ -187,4 +187,8 @@ All transaction records are stored in MongoDB. Saved records remain available af
 
 ## Author
 
+ Sayantika Das
+
+GitHub: [@sayantikadas06]
+
 Developed as a full-stack development internship project for CodeNova.
