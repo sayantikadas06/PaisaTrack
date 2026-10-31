@@ -1,28 +1,34 @@
 # PaisaTrack — Expense Tracker
 
-PaisaTrack is a full-stack MERN Expense Tracker application that helps users record income and expenses, monitor savings, and manage transactions through a simple, responsive dashboard.
+PaisaTrack is a full-stack MERN Expense Tracker application that helps users record income and expenses, monitor savings, and manage transactions through a simple and responsive dashboard.
+
+## Live Demo
+
+**Live Application:** https://paisa-track-owipohryu-sayantikadas06.vercel.app
+
+**GitHub Repository:** https://github.com/sayantikadas06/PaisaTrack
 
 ## Features
 
-- Add, edit, and delete transactions
-- Track income and expenses by category
-- View total income, total expenses, and net savings
-- Filter transactions by type, category, and date
-- Clear filters to view all transactions
-- Client-side and server-side validation
-- Store transaction data persistently in MongoDB
-- Responsive interface for desktop and mobile devices
+- Add, edit, and delete transactions.
+- Track income and expenses by category.
+- View total income, total expenses, and net savings.
+- Filter transactions by type, category, and date.
+- Clear filters to view all transactions.
+- Client-side and server-side input validation.
+- Store transaction data persistently in MongoDB.
+- Responsive interface for desktop and mobile devices.
 
 ## Technologies Used
 
-**Frontend**
+### Frontend
 - React
 - Vite
 - Axios
 - Lucide React
 - CSS
 
-**Backend**
+### Backend
 - Node.js
 - Express.js
 - MongoDB
@@ -43,8 +49,9 @@ expense tracker_application/
 │   ├── models/
 │   ├── routes/
 │   ├── server.js
-│   ├── .env
-│   └── package.json
+│   ├── package.json
+│   └── .env
+├── .gitignore
 └── README.md
 ```
 
@@ -56,23 +63,29 @@ expense tracker_application/
 - MongoDB Atlas account or a MongoDB server
 - Visual Studio Code (recommended)
 
-### 1. Configure the Backend
+### 1. Clone the Repository
 
-Open a terminal in the project root and run:
+```bash
+git clone https://github.com/sayantikadas06/PaisaTrack.git
+cd PaisaTrack
+```
+
+### 2. Configure the Backend
 
 ```bash
 cd Backend
 npm install
 ```
 
-Create a `.env` file inside the `Backend` folder with these variables:
+Create a `.env` file inside the `Backend` folder:
 
 ```env
 MONGO_URI=your_mongodb_connection_string
 PORT=5000
+CLIENT_URL=http://localhost:5173
 ```
 
-Replace the placeholder with your MongoDB connection string. Never commit real database credentials to GitHub.
+Replace the MongoDB placeholder with your own connection string. Never commit real database credentials to GitHub.
 
 Start the backend:
 
@@ -80,15 +93,26 @@ Start the backend:
 npm run dev
 ```
 
-The API runs at `http://localhost:5000`, provided the port is available and the database connection succeeds.
+The backend runs at `http://localhost:5000`.
 
-### 2. Configure the Frontend
+### 3. Configure the Frontend
 
-Open a second terminal in the project root and run:
+Open a second terminal from the project root:
 
 ```bash
 cd vite-project
 npm install
+```
+
+Create a `.env` file inside `vite-project`:
+
+```env
+VITE_API_URL=http://localhost:5000/api/transactions
+```
+
+Start the frontend:
+
+```bash
 npm run dev
 ```
 
@@ -98,7 +122,7 @@ Keep both terminals running while using the application.
 
 ## REST API Endpoints
 
-Base URL: `http://localhost:5000/api/transactions`
+**Base URL:** `http://localhost:5000/api/transactions`
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -123,26 +147,43 @@ Each transaction contains:
 | `createdAt` | Date | Automatically generated creation timestamp |
 | `updatedAt` | Date | Automatically generated update timestamp |
 
-Mongoose schema validation is used on the backend. The frontend also validates user input before submitting transactions.
+The backend uses Mongoose for database schema validation and server-side validation. The frontend also validates user input before submitting transactions.
 
 ## Summary Calculations
 
-- **Total Income:** Sum of all income transactions
-- **Total Expenses:** Sum of all expense transactions
-- **Net Savings:** Total income minus total expenses
+- **Total Income:** Sum of all income transactions.
+- **Total Expenses:** Sum of all expense transactions.
+- **Net Savings:** Total income minus total expenses.
 
-The summary values are calculated by the backend using stored transaction records.
+Summary values are calculated by the backend using MongoDB transaction records.
 
 ## Data Persistence
 
-Transactions are stored in MongoDB, so saved records remain available after restarting the backend, provided the database remains accessible.
+All transaction records are stored in MongoDB. Saved records remain available after restarting the backend, provided the database remains accessible.
 
-## Screenshots and Demo
+## Screenshots
 
-Add screenshots of the dashboard, transaction form, filters, and transaction history here before submission.
+### Dashboard
+![Dashboard](Screenshots/dashboard.png)
 
-- **GitHub Repository:** Add your repository URL here.
-- **Live Demo / Walkthrough:** Add your deployed application link or demo video link here, if available.
+### Transaction History
+![Transaction History](Screenshots/transaction-form.png)
+
+### filters
+![Add Transaction](Screenshots/filters.png)
+
+### Edit Transaction
+![Edit Transaction](Screenshots/edit.png)
+
+### Delete Transaction
+![Delete Transaction](Screenshots/delete.png)
+
+
+## Deployment
+
+- **Frontend:** Vercel
+- **Backend:** Render
+- **Database:** MongoDB Atlas
 
 ## Author
 
